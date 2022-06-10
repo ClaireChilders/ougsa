@@ -1,3 +1,9 @@
+:root {
+    --discord-color: #273A92;
+    --twitter-color: #00B3E2;
+    --instagram-color: #F27275;
+    --grizzorgs-color: #FFC843;
+}
 
 
 .header {
@@ -6,6 +12,8 @@
     background-image: linear-gradient(rgba(255, 255, 255, 0.13), rgba(87, 87, 87, 0.137));
     color: #0e4375;
     backdrop-filter: blur(5px);
+
+    z-index: 20;
 }
 
 .center {
@@ -61,12 +69,7 @@ img {
     max-width: 100%;
 }
 
-a {
-    font-size: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 
 div.card {
@@ -104,25 +107,18 @@ div.gsa-description {
     margin-left: auto;
 }
 
-.button {
-    display: block;
 
-    width: 40%;
-    height: 10%;
-    border-radius: 1.5em;
-    background-image: linear-gradient(rgba(255, 255, 255, 1), rgb(252, 252, 252));
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
-
-    text-align: center;
-    padding: 0.75em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-
+.circle {
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
 }
 
 .icon {
     width: 40px;
-    margin-right: 20px;
 }
 
 p {
@@ -135,3 +131,114 @@ p {
 .hearts {
     font-size: 2em;
 }
+
+
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+a {
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.button{  
+    display: block;
+    width: 40%;
+
+    padding: 0.75em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    background: white;
+    
+    text-align: center;
+    font-size: 1.5em;
+    font-family: arial;
+    text-transform: uppercase;
+    line-height: 20px;
+    text-decoration: none;
+    
+    transition: all .35s;
+}
+
+.discord {
+    color: var(--discord-color);
+}
+
+.twitter {
+    color: var(--twitter-color);
+}
+
+.instagram {
+    color: var(--instagram-color);
+}
+
+.grizzorgs {
+    color: var(--grizzorgs-color);
+}
+
+.btn-txt {
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+  
+a.button:before,
+a.button:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    z-index: 1;
+    transition: all .35s;
+}
+
+a.discord:before,
+a.discord:after {
+    background: var(--discord-color);
+}
+
+a.twitter:before,
+a.twitter:after {
+    background: var(--twitter-color);
+}
+
+a.instagram:before,
+a.instagram:after {
+    background: var(--instagram-color);
+}
+
+a.grizzorgs:before,
+a.grizzorgs:after {
+    background: var(--grizzorgs-color);
+}
+  
+a.button:before{
+    opacity: .5;
+}
+  
+a.button:after{
+    transition-delay: .2s;
+}
+  
+a.button:hover{
+    color: #fff;
+}
+  
+a.button:hover:before,
+a.button:hover:after{
+    top: 0;
+ }
