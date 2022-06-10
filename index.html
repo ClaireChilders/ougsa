@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Assets/CSS/main.css">
+
+        <title>GSA at OU</title>
+    </head>
+
+    <body>
+        <div class="top-container">
+            <img class="banner" src="Assets\Images\GSABanner_SocialMedia.png" alt="Gender and Sexuality Alliance of Oakland University Banner">
+        </div>
+
+
+        <div class="header" id="gsa-header">
+            <img class="logo" src="Assets/Images/LogoGSA_Circle.png">
+            <h2>Gender & Sexuality Alliance</h2>
+        </div>
+        <div class="content">
+
+        <a class="button"><span>Discord</span></a>
+        <a class="button"><span>Twitter</span></a>
+        <a class="button"><span>Instagram</span></a>
+
+        <a class="button"><span>GrizzOrgs</span></a>
+
+        <div class="row">
+            <div class="card">
+                <img src="Assets/Images/LogoGSA_Circle.png">
+                <div class="container">
+                    <p id="card-title">Sample event here!</p>
+                    <p>This is a cool event where all of the GSA members will have so much fun and be super queer :D</p>
+            </div></div>
+            <div class="card">
+                <img src="Assets/Images/LogoGSA_Circle.png">
+                <div class="container">
+                    <p id="card-title">Sample event here!</p>
+                    <p>This is a cool event where all of the GSA members will have so much fun and be super queer :D</p>
+            </div></div>
+        </div>
+        
+        </div>
+
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var header = document.getElementById("gsa-header");
+            
+            // set a temporary distance (very large so it doesn't accidentally stick too early)
+            var sticky = 5000;
+            // then set the correct distance after 1000ms to ensure all elements have loaded
+            setTimeout(function() {
+                sticky = header.offsetTop;
+            }, 1000);
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
+        </script>
+
+
+  </body>
+</html>
