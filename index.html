@@ -13,8 +13,10 @@
 
 
         <div class="header" id="gsa-header">
+            <div class="center">
             <img class="logo" src="Assets/Images/LogoGSA_Circle.png">
             <h2>Gender & Sexuality Alliance</h2>
+            </div>
         </div>
         <div class="content">
 
@@ -47,14 +49,19 @@
             var header = document.getElementById("gsa-header");
             
             // set a temporary distance (very large so it doesn't accidentally stick too early)
-            var sticky = 5000;
+            var stickyConst = 5000;
             // then set the correct distance after 1000ms to ensure all elements have loaded
             setTimeout(function() {
-                sticky = header.offsetTop;
+                stickyConst = header.offsetTop;
             }, 1000);
 
             function myFunction() {
-                if (window.pageYOffset > sticky) {
+                if (header.offsetTop != 0 && header.offsetTop != stickyConst) {
+                    console.log("updating sticky offset");
+                    stickyConst = header.offsetTop;
+                }
+                
+                if (window.pageYOffset > stickyConst) {
                     header.classList.add("sticky");
                 } else {
                     header.classList.remove("sticky");
